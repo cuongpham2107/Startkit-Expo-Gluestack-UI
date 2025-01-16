@@ -5,6 +5,7 @@ import { Text, View } from '@/components/Themed';
 import { Link } from '@/components/ui/link';
 import { router } from 'expo-router';
 import { Button, ButtonText } from '@/components/ui/button';
+import useAuthStore from '@/libs/stores/auth/auth.store';
 
 export default function TabOneScreen() {
   return (
@@ -12,13 +13,6 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
-      <Button
-          onPress={() => {
-            router.push("/auth/login");
-          }}
-        >
-          <ButtonText>Sign up</ButtonText>
-        </Button>
     </View>
   );
 }
